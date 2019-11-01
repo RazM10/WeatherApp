@@ -4,15 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChangeCityController"
-    android:background="@drawable/city_background">
+    android:background="@drawable/city_background"
+    android:orientation="vertical">
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="#FFF"
         android:layout_margin="16dp"
         android:id="@+id/city_et"
-        android:imeOptions="actionGo"/>
+        android:imeOptions="actionGo"
+        android:hint="Enter City Name"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Go"
+        android:id="@+id/buttonGO"/>
 
 
 </LinearLayout>

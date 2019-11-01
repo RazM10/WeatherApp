@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,ChangeCityController.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -76,11 +77,19 @@ public class MainActivity extends AppCompatActivity {
 
         if(city!=null){
             Log.d("WeatherApp","Typed "+city);
+            getWeatherForCity(city);
         }
         else {
             getWeatherForCurrentLocation();
         }
 
+    }
+
+    private void getWeatherForCity(String city){
+        RequestParams params=new RequestParams();
+        params.put("q",city);
+        params.put("appid",APP_ID);
+        getWeather(params);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
